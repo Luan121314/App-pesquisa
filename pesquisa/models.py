@@ -6,6 +6,6 @@ class Pergunta(models.Model):
     data = models.DateTimeField(default = timezone.now)
 
 class Alternativa(models.Model):
-    pergunta = models.foreignKey(Pergunta, on_delete = models.CASCADE)
+    pergunta = models.ForeignKey(Pergunta, on_delete = models.CASCADE)
     texto = models.CharField(max_length=150)
     votos = models.IntegerField(default=0)
