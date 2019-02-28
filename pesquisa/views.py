@@ -1,4 +1,7 @@
 from django.shortcuts import render
 
+from .models import Pergunta
 def index(request):
-    return render(request, 'index.html')
+    todas = Pergunta.objects.all()
+    return render(request, 'index.html',{"perguntas": todas
+    })
