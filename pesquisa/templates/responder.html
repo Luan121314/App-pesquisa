@@ -1,0 +1,22 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="{%static 'css/style.css'%}">
+</head>
+<body>
+    <form action="{% url 'votar'  %}" method="POST">
+    {% csrf_token %}
+    <h1>{{ pergunta.texto}}</h1>
+    {% for alternativa in pergunta.alternativa_set.all %}
+    <div><input name="escolha" type="radio">{{ alternativa.texto }}</div>
+    {% endfor %}
+    <button type="submit" value="{ alternativa.id }" >Confirmar voto</button>
+
+</form>
+</body>
+</html>
