@@ -13,9 +13,9 @@
     {% csrf_token %}
     <h1>{{ pergunta.texto}}</h1>
     {% for alternativa in pergunta.alternativa_set.all %}
-    <div><input name="escolha" type="radio">{{ alternativa.texto }}</div>
+    <div><input name="escolha" type="radio" value="{{ alternativa.id }}">{{ alternativa.texto }}</div>
     {% endfor %}
-    <button type="submit" value="{ alternativa.id }" >Confirmar voto</button>
+    <button type="submit">Confirmar voto</button>
 
 </form>
 </body>
