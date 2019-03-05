@@ -11,7 +11,7 @@ ul{
 }
 li a{
     text-decoration: none;
-    font-size: 15pt;
+    font-size: 13pt;
     color: white;
 
 }
@@ -21,3 +21,4 @@ li:nth-child(odd){
     padding: 5px;
     
 }
+
